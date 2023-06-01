@@ -1,0 +1,14 @@
+flask
+flask-migrate
+flask-restful
+flask-swagger
+flask-script
+sqlalchemy
+psycopg2
+flask-sqlalchemy
+flask_httpauth
+swagger-ui-py
+python-dotenv
+requests
+redis
+rq
