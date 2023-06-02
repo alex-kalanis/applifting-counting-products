@@ -5,6 +5,8 @@ flask-swagger
 flask-script
 sqlalchemy
 psycopg2
+pytest
+coverage
 flask-sqlalchemy
 flask_httpauth
 swagger-ui-py
@@ -12,3 +14,4 @@ python-dotenv
 requests
 redis
 rq
+

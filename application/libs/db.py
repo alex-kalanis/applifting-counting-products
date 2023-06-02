@@ -33,7 +33,7 @@ class Db:
             raise CountingException('Connect to DB first!')
         return self.connection
 
-    def get_session(self):
+    def get_session(self) -> scoped_session:
         if not self.session:
             raise CountingException('Connect to DB first!')
         return self.session

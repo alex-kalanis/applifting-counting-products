@@ -1,10 +1,19 @@
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from typing import Optional
 from sqlalchemy import ForeignKey
 from sqlalchemy import Column, String, Integer, DateTime
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from .db import Db
+
+
+def init_db_app(app):
+    db = SQLAlchemy(app)
+    migrate = Migrate(app, db)
+
+    return db, migrate
 
 
 Base = declarative_base()

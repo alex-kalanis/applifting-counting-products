@@ -6,14 +6,13 @@ from flask_restful import Api
 from flask_swagger import swagger
 from flask.cli import AppGroup
 from swagger_ui import api_doc
-from libs.environment import connect, config
-from libs.initial import app
+from libs.environment import config
+from libs.initial import create_app
 import click
 
 # creating an API object
+app = create_app(None)
 api = Api(app)
-
-connect()
 
 # adding the defined resources-controllers along with their corresponding urls
 from libs.controllers import ProductController, OfferController, UserController
@@ -49,6 +48,11 @@ def ping_run():
 
 
 app.cli.add_command(task_cli)
+
+
+@app.route('/')
+def home():
+    return 'Greetings to counting API; use documentation and readme to know more.'
 
 
 # driver function
